@@ -59,12 +59,12 @@ export default function HeaderNode() {
     return (
         <header>
             <div className="header" ref={headerRef}>
-                <a className="page-title" href="/">
+                <Link className="page-title" to="/">
                     <img src={!isActive ? logo : adaptiveLogo} alt="Лого сайта"/>
-                </a>
+                </Link>
                 <div className={`adaptive-container ${!isActive ? 'd-none' : ''}`} ref={headerLinksRef}>
                     <nav className="navbar" >
-                        <a href="/" className="nav-link">Главная</a>
+                        <Link to="/" className="nav-link">Главная</Link>
                         <a href=" " className="nav-link">Тарифы</a>
                         <a href=" " className="nav-link">FAQ</a>
                     </nav>

@@ -1,11 +1,12 @@
+import { Link } from 'react-router-dom'
 import logo from '../assets/eqw 1.png'
 export default function FooterNode() {
     return(
         <footer>
             <div className="footer-container">
-                <a href='/' className="footer-logo-link">
+                <Link to='/' className="footer-logo-link">
                     <img src={logo} className='footer-logo' alt="" />
-                </a>
+                </Link>
                 <div className="text-container">
                     <div className="text">
                         г. Москва, Цветной б-р, 40
