@@ -23,9 +23,8 @@ export default function Authorize () {
         let input = e.target.value;
         let isPhone = /^\+?\d/.test(input);
         if (isPhone) {
-            let digits = input.replace(/\D/g, '').slice(0, 11);                // только цифры
-            let formatted = formatPhoneRU(digits);
-            
+            let digits = input.replace(/\D/g, '').slice(0, 11); 
+            let formatted = formatPhoneRU(digits); 
             setLogin(formatted);
                 setError(prev => ({
                     ...prev,
@@ -50,12 +49,10 @@ export default function Authorize () {
     let formatPhoneRU = (rawDigits) => {
         if (!rawDigits) return ''; 
         if (rawDigits.startsWith('8')) rawDigits = rawDigits.slice(1);
-        if (rawDigits.startsWith('7')) rawDigits = rawDigits.slice(1);
-
-        let blocks = [3, 3, 2, 2];   // группы цифр
+        if (rawDigits.startsWith('7')) rawDigits = rawDigits.slice(1); 
+        let blocks = [3, 3, 2, 2];  
         let i = 0;
-        let formatted = '+7 ';
-
+        let formatted = '+7 '; 
         for (const len of blocks) {
             const part = rawDigits.slice(i, i + len);
             if (!part) break;
@@ -66,9 +63,9 @@ export default function Authorize () {
         return formatted.trim();
     };
     let sanitizeLogin = (value) =>
-    value
-        .replace(/[^a-zA-Z0-9-_]/g, '')  
-        .replace(/^(\d+)/, '');
+        value
+            .replace(/[^a-zA-Z0-9-_]/g, '')  
+            .replace(/^(\d+)/, '');
 
     let handleSubmit = async (e) => {
         e.preventDefault()
@@ -78,8 +75,7 @@ export default function Authorize () {
             });
             loginFunction(res.data);
             console.log(res.data);
-            navigate('/')
-
+            navigate('/') 
         } catch (err) {
             alert('Неправильный логин или пароль! Ошибка : ', err)
         }

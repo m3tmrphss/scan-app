@@ -1,5 +1,4 @@
-  
-import { BrowserRouter, HashRouter, Navigate, Route, Routes } from 'react-router-dom'; 
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom'; 
 import MainNode from './components/main/main';
 import Authorize from './components/main/authorize';
 import SearchPage from './components/main/searchPage';
@@ -14,8 +13,7 @@ function ProtectedRoute({children}) {
   }
   return children
 }
-function AuthorizeRoute({children}) {
-
+function AuthorizeRoute({children}) { 
   let {isAuthorized} = useContext(authorizeContext)
   if (isAuthorized) {
     return <Navigate to={`/`} replace />
@@ -47,6 +45,5 @@ function App() {
       </Routes>
     </HashRouter>
   );
-}
-//  basename={process.env.PUBLIC_URL}
+} 
 export default App;

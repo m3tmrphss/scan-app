@@ -8,15 +8,14 @@ import '../styles/footer.scss';
 import { authorizeContext } from "../context/authorizeContext";
 import axios from "axios";
 import { Link } from "react-router-dom";
-export default function HeaderNode() { 
-
+export default function HeaderNode() {  
     let headerRef = useRef() 
     let adaptiveBtnRef = useRef();
     let headerLinksRef = useRef(); 
     let [isActive, setIsActive] = useState(false); 
-    let {token, isAuthorized, logoutFunction, limitsInfo, handleChangeData} = useContext(authorizeContext);
-
+    let {token, isAuthorized, logoutFunction, limitsInfo, handleChangeData} = useContext(authorizeContext); 
     let [loading, setLoading] = useState(false); 
+
     useEffect(() => { 
         let body = document.querySelector('body')
         if (isActive) { 
@@ -45,8 +44,7 @@ export default function HeaderNode() {
                         }
                     })  
                     let data = res.data.eventFiltersInfo; 
-                    handleChangeData(data.usedCompanyCount, data.companyLimit)
-                     
+                    handleChangeData(data.usedCompanyCount, data.companyLimit) 
                 } 
             } catch (error) {
                 console.log(error)

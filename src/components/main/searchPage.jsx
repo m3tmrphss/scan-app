@@ -51,8 +51,7 @@ export default function SearchPage () {
             maxDate: new Date(),
             onSelect({ date }) {
                 dpMax.update({ minDate: date });
-
-                // Записываем в state дату начала
+ 
                 setInputsValue(prev => ({
                     ...prev,
                     dateRange: {
@@ -78,8 +77,7 @@ export default function SearchPage () {
                 }));
             },
         });
-
-        // Отключаем возможность ручного ввода
+ 
         dpMinRef.current.setAttribute("readonly", "true");
         dpMaxRef.current.setAttribute("readonly", "true");
 

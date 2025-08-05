@@ -25,7 +25,7 @@ export default function SearchOutput() {
         }
     });  
     let [loadedChunksIndex, setLoadedChunksIndex] = useState(0);
-    let [visibleDocs, setVisibleDocs] = useState([]); // 10, 20, ...
+    let [visibleDocs, setVisibleDocs] = useState([]);  
     let [allDocs, setAllDocs] = useState([]); 
     let [dateArr, setDateArr] = useState([]);  
     let scrollAmount = 300
@@ -37,9 +37,9 @@ export default function SearchOutput() {
     }; 
     let handleMouseMove = (e) => {
         if (!isDragging) return;
-        e.preventDefault(); // чтобы не выделялся текст
+        e.preventDefault();  
         const x = e.pageX - containerRef.current.offsetLeft;
-        const walk = (x - startX) * 1.5; // коэффициент скорости
+        const walk = (x - startX) * 1.5;  
         containerRef.current.scrollLeft = scrollLeft - walk;
     }; 
     let handleMouseUp = () => {
@@ -68,7 +68,7 @@ export default function SearchOutput() {
     let sliceArrFunc = () => { 
         let chunkSize = 100;
         let start = loadedChunksIndex * chunkSize;
-        let end = Math.min(start + chunkSize, documentsIds.length); // не выходить за границы
+        let end = Math.min(start + chunkSize, documentsIds.length);  
         const slice = documentsIds.slice(start, end);
         setLoadedChunksIndex(prev => prev + 1);
         return slice; 
