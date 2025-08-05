@@ -99,7 +99,7 @@ export default function HeaderNode() {
                                 <div className="authorization-links">
                                     <a className="sign-up-link" href='# '>Зарегистрироваться</a> 
                                     <div className="vector"></div>
-                                    <a href={`${import.meta.env.BASE_URL || process.env.PUBLIC_URL}/authorize`} className="log-in-link">Войти</a>
+                                    <a href={`/authorize`} className="log-in-link">Войти</a>
                                 </div>
                             )
                         }
