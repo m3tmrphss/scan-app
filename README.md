@@ -1,70 +1,167 @@
-# Getting Started with Create React App
+🔧 Основной функционал
+🖥 Главная страница
+Доступна без авторизации.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Содержит описание сервиса.
 
-## Available Scripts
+Кнопка «Запросить данные»:
 
-In the project directory, you can run:
+Видна только авторизованным пользователям.
 
-### `npm start`
+Ведёт на страницу параметров поиска.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Раздел «Почему именно мы»:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Реализован в виде карусели карточек.
 
-### `npm test`
+Раздел «Наши тарифы»:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Карточка активного тарифа подсвечивается.
 
-### `npm run build`
+Кнопка «Подробнее» → заглушка (не функциональна).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Для активного тарифа:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Появляется бейдж «Текущий тариф».
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Кнопка «Перейти в личный кабинет».
 
-### `npm run eject`
+🔐 Авторизация
+Форма с полями Логин и Пароль (type="password").
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Кнопка «Войти»:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Неактивна, пока поля не заполнены.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+При успешной авторизации:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Получаем accessToken и expire.
 
-## Learn More
+Сохраняем в localStorage.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Сообщение об ошибке при неудачной попытке входа.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Остальные элементы (Google, Facebook, вкладка «Зарегистрироваться») — не функциональны.
 
-### Code Splitting
+🔎 Форма поиска
+Доступна только авторизованным пользователям.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Редирект на главную для неавторизованных.
 
-### Analyzing the Bundle Size
+Обязательные поля помечаются *, кнопка «Поиск» неактивна при ошибках.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Поля формы:
 
-### Making a Progressive Web App
+Поле	Тип	Обязательное
+ИНН	Текст	✔️ Да
+Признак максимальной полноты	Чекбокс	✖️ Нет
+Упоминания в бизнес-контексте	Чекбокс	✖️ Нет
+Главная роль в публикации	Чекбокс	✖️ Нет
+Тональность	Выпадающий	✔️ Да
+Публикации с риск-факторами	Чекбокс	✖️ Нет
+Включать технические новости	Чекбокс	✖️ Нет
+Включать анонсы и календари	Чекбокс	✖️ Нет
+Включать сводки новостей	Чекбокс	✖️ Нет
+Количество документов (1–1000)	Число	✔️ Да
+Диапазон дат поиска (от и до)	Дата	✔️ Да
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Проверки:
 
-### Advanced Configuration
+ИНН на корректность.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Даты не в будущем и дата начала ≤ даты конца.
 
-### Deployment
+Ошибки отображаются в интерфейсе.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+📊 Страница результатов поиска
+Поиск состоит из 3 этапов:
+POST /objectsearch/histograms
 
-### `npm run build` fails to minify
+Получение сводки по публикациям.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Отображается в виде горизонтальной карусели.
+
+Пока грузится — показывается лоадер.
+
+POST /objectsearch
+
+Получение массива ID публикаций.
+
+POST /documents
+
+Получение содержимого публикаций (заголовок, источник, текст и т.д.).
+
+Реализована ленивая подгрузка: отображаются по 10 карточек.
+
+Кнопка «Показать больше» загружает следующие 10.
+
+После загрузки всех документов кнопка скрывается.
+
+📰 Карточка публикации:
+Дата публикации и источник (ссылка).
+
+Заголовок.
+
+Теги в зависимости от параметров:
+
+isTechNews → технические новости.
+
+isAnnouncement → анонсы и события.
+
+isDigest → сводки новостей.
+
+Основной текст публикации.
+
+Кнопка «Читать в источнике».
+
+Количество слов (wordCount).
+
+🎨 Требования к верстке
+Соответствие дизайну:
+
+Цвета, шрифты, отступы, размеры.
+
+Элементы из макета присутствуют.
+
+Адаптивность:
+
+Корректное отображение на мобильных устройствах.
+
+Семантическая разметка:
+
+<header>, <main>, <footer>, <h1> и т.д.
+
+Интерактивность:
+
+При наведении: cursor: pointer, изменение внешнего вида.
+
+Используемые технологии стилизации:
+
+CSS / CSS Modules / Styled Components.
+
+Предпочтение классам вместо селекторов по тегам/ID.
+
+Иконки и изображения: рекомендуется экспортировать из Figma в SVG.
+
+🧠 Требования к коду
+Проект на React.
+
+Компонентный подход:
+
+Логичное разбиение на переиспользуемые компоненты.
+
+Современный синтаксис:
+
+Хуки, стрелочные функции, деструктуризация и т.д.
+
+Работа с состоянием:
+
+Рекомендуется использовать Context, useReducer или Redux.
+
+Принципы:
+
+KISS — не усложняй.
+
+DRY — не повторяйся.
+
+Чистый, читаемый код с форматированием и понятными названиями.
