@@ -84,7 +84,7 @@ export default function MainNode ( ) {
                             <p className="description">Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.</p>
                         </div>
                         {isAuthorized && ( 
-                            <Link href={`/search`}>
+                            <Link to={`/search`}>
                                 <button className="get-info-btn">Запросить данные</button>
                             </Link>
                         )}

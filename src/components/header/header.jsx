@@ -100,7 +100,7 @@ export default function HeaderNode() {
                                 <div className="authorization-links">
                                     <a className="sign-up-link" href='# '>Зарегистрироваться</a> 
                                     <div className="vector"></div>
-                                    <Link href={`/authorize`} className="log-in-link">Войти</Link>
+                                    <Link to={`/authorize`} className="log-in-link">Войти</Link>
                                 </div>
                             )
                         }
