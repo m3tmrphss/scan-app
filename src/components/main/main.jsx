@@ -83,7 +83,7 @@ export default function MainNode ( ) {
                             <p className="description">Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.</p>
                         </div>
                         {isAuthorized && ( 
-                            <a href={`/search`}>
+                            <a href={`${process.env.PUBLIC_URL}/search`}>
                                 <button className="get-info-btn">Запросить данные</button>
                             </a>
                         )}
@@ -140,7 +140,7 @@ export default function MainNode ( ) {
                                                 <div className="price">{card.price}</div>
                                             </div> 
                                             {card.credit && <div className="credit-price">или {card.credit}/мес. при рассрочке на 24 мес.</div>}
-                                            {!card.credit && <div className="credit-price">  </div>}
+                                            {!card.credit && <div className="credit-price"> </div>}
                                         </div>
                                         <div className="rate-plan-container">
                                             <h3 className="subtitle">В тариф входит: </h3>
