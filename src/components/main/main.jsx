@@ -83,7 +83,7 @@ export default function MainNode ( ) {
                             <p className="description">Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.</p>
                         </div>
                         {isAuthorized && ( 
-                            <a href={'/search'}>
+                            <a href={`${import.meta.env.BASE_URL || process.env.PUBLIC_URL}/search`}>
                                 <button className="get-info-btn">Запросить данные</button>
                             </a>
                         )}
