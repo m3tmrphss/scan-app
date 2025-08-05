@@ -10,7 +10,7 @@ import SearchOutput from './components/main/searchOutput';
 function ProtectedRoute({children}) {
   let {isAuthorized} = useContext(authorizeContext)
   if (!isAuthorized) {
-    return <Navigate to="/authorize" replace />
+    return <Navigate to={`${process.env.PUBLIC_URL}/authorize`} replace />
   }
   return children
 }
@@ -18,7 +18,7 @@ function AuthorizeRoute({children}) {
 
   let {isAuthorized} = useContext(authorizeContext)
   if (isAuthorized) {
-    return <Navigate to='/' replace />
+    return <Navigate to={`${process.env.PUBLIC_URL}/`} replace />
   }
   return children
 }
