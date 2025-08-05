@@ -11,6 +11,7 @@ import icon2 from '../assets/Group 1171274216.svg';
 import icon3 from '../assets/Group 1171274214.svg'
 import check from '../assets/icons8-галочка-96 1.svg' 
 import { authorizeContext } from "../context/authorizeContext";
+import { Link } from 'react-router-dom'
 export default function MainNode ( ) { 
     let {isAuthorized} = useContext(authorizeContext)
     let itemsArr = [
@@ -83,9 +84,9 @@ export default function MainNode ( ) {
                             <p className="description">Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.</p>
                         </div>
                         {isAuthorized && ( 
-                            <a href={`${process.env.PUBLIC_URL}/search`}>
+                            <Link href={`/search`}>
                                 <button className="get-info-btn">Запросить данные</button>
-                            </a>
+                            </Link>
                         )}
                     </div>
                     <div className="img-container">

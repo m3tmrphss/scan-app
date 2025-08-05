@@ -7,6 +7,7 @@ import '../styles/header.scss';
 import '../styles/footer.scss';
 import { authorizeContext } from "../context/authorizeContext";
 import axios from "axios";
+import { Link } from "react-router-dom";
 export default function HeaderNode() { 
 
     let headerRef = useRef() 
@@ -99,7 +100,7 @@ export default function HeaderNode() {
                                 <div className="authorization-links">
                                     <a className="sign-up-link" href='# '>Зарегистрироваться</a> 
                                     <div className="vector"></div>
-                                    <a href={`${process.env.PUBLIC_URL}/authorize`} className="log-in-link">Войти</a>
+                                    <Link href={`/authorize`} className="log-in-link">Войти</Link>
                                 </div>
                             )
                         }
