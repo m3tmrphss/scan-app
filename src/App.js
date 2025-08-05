@@ -24,7 +24,7 @@ function AuthorizeRoute({children}) {
 }
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <HashRouter > 
       <Routes>
         <Route path="/" element={<Layout />}> 
           <Route index element={<MainNode />}/>
@@ -45,8 +45,8 @@ function App() {
             } />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
-
+//  basename={process.env.PUBLIC_URL}
 export default App;
