@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/scan-app/static/css/main.488a1bc6.css",
+    "main.js": "/scan-app/static/js/main.51f97862.js",
+    "static/js/488.4cfec479.chunk.js": "/scan-app/static/js/488.4cfec479.chunk.js",
+    "static/media/f37b0270.png": "/scan-app/static/media/70067dc7cc9cb2a3c692147221ee4d3bf37b0270.b211a807f90ab3c7f654.png",
+    "static/media/2398 1.png": "/scan-app/static/media/2398 1.b8ec92ddbd19d1b3ddd5.png",
+    "static/media/Group 1171274244.svg": "/scan-app/static/media/Group 1171274244.ee475d528380100d3355a8b3612bfb86.svg",
+    "static/media/Characters.svg": "/scan-app/static/media/Characters.8375cb216e6878be8864b5ae536b66fa.svg",
+    "static/media/ferry_black.woff": "/scan-app/static/media/ferry_black.0f355dc2c7535af828c3.woff",
+    "static/media/Group 14.svg": "/scan-app/static/media/Group 14.6acc06232c4daa1b0212b144c4944a65.svg",
+    "static/media/Group 1171274267.svg": "/scan-app/static/media/Group 1171274267.6e7e2aef66ec51120ceaec145ea0e94c.svg",
+    "static/media/Group 1171274237.svg": "/scan-app/static/media/Group 1171274237.a6528caf57d4da5d92d78ac84f2a0412.svg",
+    "static/media/Group 1171274215.svg": "/scan-app/static/media/Group 1171274215.20c13d9919867a151987c6e4ca6faa39.svg",
+    "static/media/Group 1171274216.svg": "/scan-app/static/media/Group 1171274216.a8fc98813291d00740cc1f1a65276623.svg",
+    "static/media/Folders.svg": "/scan-app/static/media/Folders.730c68c5574cbd07a6f9ba318de734e2.svg",
+    "static/media/Vector (3).svg": "/scan-app/static/media/Vector (3).ac55df65b11556212d849c6160acc20c.svg",
+    "static/media/icons8-галочка-96 1.svg": "/scan-app/static/media/icons8-галочка-96 1.79f09846a2e730d6c998b671a879d708.svg",
+    "static/media/Mask group (3).svg": "/scan-app/static/media/Mask group (3).eb3cb8bceb4c7da236bcf1db6c5c3695.svg",
+    "static/media/Mask group (2).svg": "/scan-app/static/media/Mask group (2).c3c191844fc0cf96cb17c2c2e64cdbd3.svg",
+    "static/media/icons8-спиннер,-кадр-5-100 1.svg": "/scan-app/static/media/icons8-спиннер,-кадр-5-100 1.c5616e6d116e753174fc95e6941d1c89.svg",
+    "static/media/Group 1171274227.svg": "/scan-app/static/media/Group 1171274227.b233cfdc5526452c7dcd15c2b52ac715.svg",
+    "static/media/Document.svg": "/scan-app/static/media/Document.cb1d5414d02f5662784b9f602c3efbf2.svg",
+    "static/media/Mask group (1).svg": "/scan-app/static/media/Mask group (1).93af2c8fe7fa10c0b204e9b6790e1b48.svg",
+    "static/media/Group 1171274228.svg": "/scan-app/static/media/Group 1171274228.4b143ee67dda3bad0f35615948137ced.svg",
+    "static/media/Group 1171274214.svg": "/scan-app/static/media/Group 1171274214.ba581528001f5237be7394bb1c290f9f.svg",
+    "static/media/icons8-шеврон-вправо-90 1.svg": "/scan-app/static/media/icons8-шеврон-вправо-90 1.980085510fb521267f68e5f0ec91f308.svg",
+    "index.html": "/scan-app/index.html",
+    "static/media/Group 6 (1).svg": "/scan-app/static/media/Group 6 (1).24d8ff415b2ef02a0886.svg",
+    "static/media/Group 6.svg": "/scan-app/static/media/Group 6.b1d41bc2090f80153135.svg",
+    "static/media/Rectangle 33.svg": "/scan-app/static/media/Rectangle 33.76881d548b982a41539b.svg",
+    "main.488a1bc6.css.map": "/scan-app/static/css/main.488a1bc6.css.map",
+    "main.51f97862.js.map": "/scan-app/static/js/main.51f97862.js.map",
+    "488.4cfec479.chunk.js.map": "/scan-app/static/js/488.4cfec479.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.488a1bc6.css",
+    "static/js/main.51f97862.js"
+  ]
+}
