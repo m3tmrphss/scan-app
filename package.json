@@ -1,0 +1,51 @@
+{
+  "name": "scan-prj3ct",
+  "version": "0.1.0",
+  "homepage": "https://m3tmrphss.github.io/scan-app/",
+  "private": true,
+  "dependencies": {
+    "air-datepicker": "^3.5.3",
+    "axios": "^1.10.0",
+    "bootstrap": "^5.3.3",
+    "cleave": "^1.0.2",
+    "cleave.js": "^1.6.0",
+    "cra-template": "1.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-input-mask": "^2.0.4",
+    "react-router-dom": "^7.1.5",
+    "react-scripts": "5.0.1",
+    "sass": "^1.83.4",
+    "scss": "^0.2.4",
+    "web-vitals": "^4.2.4"
+  },
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
